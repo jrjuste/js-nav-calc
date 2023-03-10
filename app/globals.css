@@ -1606,8 +1606,8 @@ html[dir='rtl'] .nys-global-header > ul li a:visited {
   width: 65px;
   height: 80px;
   display: block;
-  background-image: url('/dcse/ui/icons/icon-menu.svg'),
-    url('/dcse/ui/icons/icon-menu.png');
+  background-image: url('/icon-menu.svg'),
+    url('/icon-menu.png');
   background-size: 20px;
   background-repeat: no-repeat;
   background-position: 50%;
