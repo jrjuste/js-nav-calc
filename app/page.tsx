@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "./page.module.css";
@@ -311,7 +312,80 @@ export default function Home() {
             </p>
           </div>
         </noscript>
+
+        {/* <!-- InstanceBeginEditable name="content" --> */}
+
+		<div className="right">
+			<p>
+				<a href="#calcR">
+					<img src="calcIcon.svg" alt="" />
+					<br />
+					Start calculation
+				</a>
+			</p>
+			<p>
+				<a href="https://youtu.be/wpqW_LUiov0" title="Watch YouTube video; new window" target="_blank">
+					<img src="videoIcon.svg" alt="" />
+					<br />
+					Calculator video
+				</a>
+			</p>
+			<p>
+				<a href="/dcse/lumpSumCalc.html" title="Calculate withholding for lump sum payments (bonuses, commissions, etc.)">
+					<img src="lumpSum.svg" alt="" />
+					<br />
+					Lump sum calculator
+				</a>
+			</p>
+		</div>
+
+    
+		<p>
+			Based on the Withholding Limitations <a href="/dcse/pdfs/withholdWorksheet.pdf" title="New window with blank sample of Withholding Limitations worksheet" target="_blank">
+				Worksheet</a> (<abbr title="Portable Document Format">PDF</abbr>), the
+			Income Withholding Calculator is an interactive form designed to calculate withholding in accordance with
+			federal and New York State law and regulations. The calculator is meant as an additional tool to help
+			employers calculate child support withholding. Please ensure that the information used in the calculation is
+			complete and accurate. The Income Withholding Calculator will not produce a correct result if the
+			information used is not correct. <abbr title="Division of Child Support Services" translate="no">DCSS</abbr>
+			is not responsible for errors due to incomplete or inaccurate data entered by the employer.
+		</p>
+
+		<p>
+			For detailed information about income withholding calculations, visit the <a href="/dcse/iex_worksheet.html" target="_blank" title="New window">Withholding Limitations Worksheet page</a> or click
+			the question mark <a href="/dcse/iex_worksheet.html" target="_blank" title="New window; withholding worksheet page"><img src="/dcse/images/question4.gif" alt="Go to worksheet page" /></a> icon.
+      <style jsx>
+        {`
+        img {
+          width: 15px;
+          vertical-align:middle;
+        }
+          `
+        }
+      </style>
+		</p>
+
+		<p>
+			Please note: <strong>The calculator does not collect or transmit any data.</strong> None of your inputs are
+			saved, so there is no security or privacy risk in using the calculator. Whenever the form is
+			"reset," all previous input is cleared from the form.
+		</p>
+
+		<p>
+			To use the Income Withholding Calculator, you will need your copy or copies of the <a href="/dcse/pdfs/iwoForm.pdf" title="New window with blank sample of income withholding order" target="_blank">Income Withholding for Support</a> (<abbr title="Portable Document Format" translate="no">PDF</abbr>)
+			for the employee. <strong>Note:</strong> You may also need
+			the amount of the health insurance premium for dependent or family health care coverage, if ordered by a
+			National Medical Support Notice.
+		</p>
+
+
+
+
+
       </div>
+
+
+
     </>
   );
 }
