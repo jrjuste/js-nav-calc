@@ -1,107 +1,2793 @@
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
+/* :root {
+	color-scheme: light dark;
+} */
+body {
+  margin: 0;
+  font-family: "Proxima Nova", Arial, sans-serif;
+  font-size: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.skip a {
+  position: absolute;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
 
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
+.skip a:active,
+.skip a:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  /*width:auto;*/
+  width: 98%;
+  background: #43285D;
+  color: #fff;
+  padding: 1%;
+  display: block;
+  text-align: center;
+}
 
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
+#login-links {
+  background-color: #06383D;
+  position: absolute;
+  width: 80%;
+  z-index: 10;
+}
 
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
+li #siteSearch {
+  vertical-align: middle; /*top*/
+  line-height: 1.5em; /*4--3*/
+  height: 32px;
+  padding: 20px 20px 5px 10px;
+  /*background-color:#FF9;*/
+}
+
+/*
+.nys-global-header .log-links {
+  font-family: "D Sari Bold", Arial, sans-serif;
+  float: right;
+  display: table-cell;
+  vertical-align: middle;
+  height: 50px;
+  padding: 20px 20px 5px 10px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 25px;
+  font-weight: 500;
+}
+
+*/
+
+#nys-search-control {
+  width: 65px;
+  height: 80px;
+  cursor: pointer;
+  display: block;
+  float: left;
+  background-image: url("/dcse/images/icon-search.png");
+  background-image: linear-gradient(transparent, transparent), url("/dcse/images/icon-search.svg");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+}
+
+.nav-search {
+  background: white;
+  margin: 10px;
+  float: right;
+}
+
+.nav-search:before,
+.nav-search:after {
+  content: " ";
+  display: table;
+}
+
+.nav-search:after {
+  clear: both;
+}
+
+.nav-search .search-query {
+  background: white;
+  float: left;
+  margin: 0;
+  padding: 0.5em 0.5em 0.25em 0.5em;
+  border: none;
+  line-height: normal;
+  line-height: 1;
+  max-width: 70%;
+  vertical-align: middle;
+}
+
+.nys-global-header.horizontal.stacked .secureMenu>li a:hover,
+.nys-global-header.horizontal.stacked .secureMenu>li a:active {
+  background-color: #21142e;
+}
+
+#program {
+  background-color: #43285D;
+  height: 86px;
+  width: 100%;
+}
+
+#program p {
+  /* display: inline-block; // Floated elements are always block */
+  float: left;
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 30px 20px;
+  color: white;
+}
+
+#program a,
+#program a span {
+  padding-right: 0;
+  white-space: nowrap;
+  text-decoration: none;
+  color: white;
+}
+
+#program a:active span,
+#program a:hover span {
+  color: white;
+  text-decoration: underline;
+}
+
+.hide {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+html:not([dir="rtl"]) .floatend {
+	float: right;
+}
+
+html:not([dir="rtl"]) .floatstart {
+	float: left;
+}
+
+html[dir="rtl"] .floatend {
+	float: left;
+}
+
+html[dir="rtl"] .floatstart {
+	float: right;
+}
+
+html:not([dir="rtl"]) .p-e-5px {
+	padding-right: 5px;
+}
+
+html:not([dir="rtl"]) .p-s-5px {
+	padding-left: 5px;
+}
+
+html[dir="rtl"] .p-e-5px {
+	padding-left: 5px;
+}
+
+html[dir="rtl"] .p-s-5px {
+	padding-right: 5px;
+}
+
+html:not([dir="rtl"]) .m-e-5px {
+	margin-right: 5px;
+}
+
+html:not([dir="rtl"]) .m-s-5px {
+	margin-left: 5px;
+}
+
+html[dir="rtl"] .m-e-5px {
+	margin-left: 5px;
+}
+
+html[dir="rtl"] .m-s-5px {
+	margin-right: 5px;
+}
+
+html:not([dir="rtl"]) .m-e-10px {
+	margin-right: 10px;
+}
+
+html:not([dir="rtl"]) .m-s-10px {
+	margin-left: 10px;
+}
+
+html[dir="rtl"] .m-e-10px {
+	margin-left: 10px;
+}
+
+html[dir="rtl"] .m-s-10px {
+	margin-right: 10px;
+}
+
+html:not([dir="rtl"]) .m-e-15px {
+	margin-right: 15px;
+}
+
+html:not([dir="rtl"]) .m-s-15px {
+	margin-left: 15px;
+}
+
+html[dir="rtl"] .m-e-15px {
+	margin-left: 15px;
+}
+
+html[dir="rtl"] .m-s-15px {
+	margin-right: 15px;
+}
+
+
+p {
+  /*margin: 30px 45px;*/
+  /*margin: 0.67em 0;*/
+  font-family: "Proxima Nova", Arial, sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+  /*
+  font-size: 14px;
+  line-height: 18px;
+  max-width: 625px;
+  */
+  line-height: 1.5em;
+  /*max-width: 625px;
+   max-width:40em;
+   max-width: 75%;*/
+}
+
+
+div.info {
+  margin: 30px 45px 45px;
+  font-family: "Proxima Nova", Arial, sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  max-width: 625px;
+}
+
+div.info h2 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 800;
+  padding-top: 18px;
+  text-transform: capitalize;
+}
+
+div.info p,
+div.info ul {
+  line-height: 18px;
+  margin: 18px 0;
+
+}
+
+div.info ul li {
+  margin-bottom: 5px;
+}
+
+div.info ul {
+  padding-left: 20px;
+}
+
+div.info b {
+  font-weight: 800;
+}
+
+div.vertical7 {
+  padding: 15px;
+}
+
+div.vertical7 p {
+  margin: 15px 0;
+}
+
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Address font sizes and margins set differently in IE 6/7.
+ * Address font sizes within `section` and `article` in Firefox 4+, Safari 5,
+ * and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0;
+}
+
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0;
+}
+
+h5 {
+  font-size: 0.83em;
+  margin: 1.67em 0;
+}
+
+h6 {
+  font-size: 0.67em;
+  margin: 2.33em 0;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.alpha,
+.beta,
+.gamma,
+.delta,
+.epsilon,
+.zeta {
+  font-weight: 700;
+  text-rendering: optimizelegibility;
+}
+
+h1,
+.alpha {
+  font-size: 2.25em;
+  line-height: 1.33333em;
+  /*margin-bottom: 0.66667em;*/
+  margin: 0.67em 0;
+}
+
+h2,
+.beta {
+  font-size: 1.75em;
+  line-height: 1.28571em;
+  /* margin-bottom: 0.42857em; */
+  color: #523178;
+  margin: 0.67em 0;
+}
+
+h3,
+.gamma {
+  font-size: 1.5em;
+  line-height: 1em;
+  /*margin-bottom: 0.75em;*/
+  color: #333333;
+  margin: 0.67em 0;
+}
+
+h4,
+.delta {
+  font-size: 1.3125em;
+  line-height: 1.14286em;
+  /*margin-bottom: 1.14286em;*/
+  color: #888b8d;
+  margin: 0.67em 0;
+}
+
+h5,
+.epsilon {
+  font-size: 1.125em;
+  line-height: 1.11111em;
+  margin-top: 1.11111em;
+  margin-bottom: 1.11111em;
+}
+
+h6,
+.zeta {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-top: 1.375em;
+  margin-bottom: 1.375em;
+}
+
+h2 a {
+  text-decoration: none;
+  color: #523178;
+}
+
+h3 a {
+  text-decoration: none;
+  color: #333333;
+}
+
+h2 a:hover,
+h3 a:hover {
+  text-decoration: underline;
+  color: #00F;
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+#content {
+  padding: 0 45px;
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  border: 0;
+}
+
+.upper {
+  clear: both;
+  padding-top: 0.3125em;
+  padding-bottom: 2em;
+  text-align: center;
+}
+
+.upper a {
+  display: block;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.5em;
+  color: #333333;
+  margin: 0.625em auto;
+}
+
+.upper a:active,
+.upper a:focus,
+.upper a:hover {
+  color: #1d418a;
+  font-weight: bold;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0 0 1.5em 1.375em;
+}
+
+.right {
+  float: right;
+  margin: 0 0 0.625em 0.625em;
+}
+
+.left {
+  float: left;
+  margin: 0 0.625em 0.625em 0;
+}
+
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#main {
+  clear: both;
+}
+
+table {
+  margin: 0 0 1.5em 0;
+  max-width: 100%;
+  border: 1px solid #d9d9d9;
+  border-collapse: collapse;
+  /* border-left: 0; */
+}
+
+table.rail {
+  margin: 0 0 1.5em 0;
+}
+
+table.condensed th,
+table.condensed td {
+  padding: 0.25em 0.3125em;
+}
+
+table.striped tbody>tr:nth-child(odd)>td,
+table.striped tbody>tr:nth-child(odd)>th {
+  background-color: #f6f8f8;
+}
+
+/*
+table.data td:nth-child(even) {
+  text-align: right;
+}
+*/
+th,
+td {
+  padding: 0.5em;
+  line-height: 1.5em;
+  text-align: left;
+  vertical-align: top;
+  border-top: 1px solid #d9d9d9;
+  border-left: 1px solid #d9d9d9;
+}
+
+th {
+  background: #f6f8f8;
+  vertical-align: bottom;
+  font-weight: bold;
+}
+
+thead th {
+  vertical-align: bottom;
+}
+
+caption+thead tr:first-child th,
+caption+tbody tr:first-child th,
+caption+tbody tr:first-child td,
+colgroup+thead tr:first-child th,
+colgroup+tbody tr:first-child th,
+colgroup+tbody tr:first-child td,
+thead:first-child tr:first-child th,
+tbody:first-child tr:first-child th,
+tbody:first-child tr:first-child td {
+  border-top: 0;
+}
+
+tbody+tbody {
+  border-top: 2px solid #d9d9d9;
+}
+
+caption {
+  padding-bottom: 1em;
+  font-weight: bold;
+  text-align: left;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif;
+}
+
+
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  vertical-align: baseline;
+  /* 3 */
+  *vertical-align: middle;
+  /* 3 */
+}
+
+/**
+ * Address Firefox 3+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+  *overflow: visible;
+  /* 4 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to content-box in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ * 3. Remove excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *height: 13px;
+  /* 3 */
+  *width: 13px;
+  /* 3 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 3+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+
+/**
+ * 1. Remove default vertical scrollbar in IE 6/7/8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+dl {
+  margin-bottom: 1em;
+}
+
+dt,
+dd {
+  line-height: 1.5em;
+}
+
+dt {
+  font-weight: bold;
+  margin-top: 0.625em;
+}
+
+dd {
+  margin-left: 1em;
+}
+
+dd p {
+  margin-top: 0;
+}
+
+/* added 20JAN16 */
+
+
+body {
+  font-family: "Proxima Nova", Arial, sans-serif;
+  font-size: 90%;
+}
+
+@media screen and (min-width: 42.8125em) {
+  body {
+    font-size: 90%;
   }
 }
 
-* {
-  box-sizing: border-box;
+@media screen and (min-width: 50em) {
+  body {
+    font-size: 106.25%;
+  }
+}
+
+@media screen and (min-width: 75em) {
+  body {
+    font-size: 106.25%;
+  }
+}
+
+#content .help {
+  border-bottom: 1px dotted #002c73;
+  cursor: help;
+}
+
+#content .note {
+  font-size: 1em;
+  font-weight: bold;
+  background-color: #EEEEEE;
+  border-top: 1px dashed gray;
+  border-bottom: 1px dashed gray;
+  padding-left: 10px;
+}
+
+
+#content .data {
+  border-collapse: collapse;
+}
+
+#content .data th {
+  border: 1px solid #cccccc;
+  padding: 5px;
+  text-align: left;
+  font-size: 1em;
+}
+
+#content .data td {
+  border: 1px solid #cccccc;
+  padding: 5px;
+  font-size: 1em;
+}
+
+#content .data td:nth-child(even) {
+  text-align: left
+}
+
+;
+
+#content .plain {
+  border: none
+}
+
+#content .plain th {
+  border: none;
+  padding: 5px;
+  text-align: left;
+  font-size: 1em;
+}
+
+#content .plain td {
+  border: none;
+  padding: 5px;
+  font-size: 1em;
+  vertical-align: top;
+}
+
+
+#content .plainB {
+  border: none;
+}
+
+/* same as plain but for larger font size. for county pages */
+#content .plainB th {
+  border: none;
+  padding: 5px;
+  text-align: left;
+  font-size: 1em;
+  color: #000;
+}
+
+#content .plainB td {
+  border: none;
+  padding: 5px;
+  font-size: 1em;
+  vertical-align: top;
+  color: #000;
+}
+
+.dashed {
+  width:12em; 
+  padding: 0 10px;
+  border: 2px dashed black;
+  background: #ececec;
+}
+
+.lock {
+  font-size: 1.3em;
+  font-weight: bold;
+  line-height: 0.9em;
+}
+
+.lock::after {
+  content: ' ' url('/dcse/images/lockIconSm.png');
+}
+
+/*
+.content-page {
+  padding: 1em 3em;
+  margin-left: 0;
+}
+@media screen and (min-width: 48em) {
+  .content-page {
+    margin-left: 0;
+  }
+}
+@media screen and (min-width: 64em) {
+  .content-page {
+    margin-left: 300px;
+  }
+}
+.content-page p, .content-page dl, .content-page ul, .content-page ol, .content-page table, .content-page h1, .content-page h2, .content-page h3, .content-page h4, .content-page h5, .content-page h6 {
+  max-width: 40em;
+}
+*/
+
+/* Added to correctly indent sub lists with no gap between them */
+
+.sublist {
+  margin-bottom: auto;
+}
+
+/*added for button for DCSE website*/
+#content input.button {
+  padding: .35em;
+  margin: .3em 0;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  background-color: #43285D;
+  border: 1px solid #585858;
+}
+
+#content input.button:hover {
+  background-color: #FEFFE8;
+  color: #5f4875;
+  border: 1px solid #C7C7C7;
+}
+
+/*added for errors & messages*/
+#content .error li {
+  font-size: 1em;
+  margin: .3em 0;
+  color: #A90F0F;
+  list-style: none;
+}
+
+#content .message li {
+  font-size: 1em;
+  margin: .3em 0;
+  color: #025502;
+  list-style: none;
+}
+
+div.error {
+	color: #A90F0F;
+}
+
+/* Added for alert box */
+div.alert {
+  background-color: #8b2f2d;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: bold;
+  border: 10px outset #8b2f2d;
+  padding: 0 5px 0 10px;
+}
+
+/*
+div.alert {
+  border: 1px solid transparent;
+}
+*/
+
+/*
+div.alert {
+  background-color: #fee;
+  color: #000;
+  font-size: x-large;
+  font-weight: bold;
+  border: .2em solid #933;
+  border-left-width: 2em;
+  padding: 0 1.5em;
+}
+
+/*
+Icon Image classes to display SVG files
+*/
+
+.img-icon-calc {
+  content: url("/dcse/images/calcIcon.svg");
+}
+
+.img-icon-email {
+  content: url("/dcse/images/eMail.svg");
+}
+
+.img-icon-empubs {
+  content: url("/dcse/images/emPubs.svg");
+}
+
+.img-icon-lump {
+  content: url("/dcse/images/lumpSum.svg");
+}
+
+.img-icon-term {
+  content: url("/dcse/images/termIcon.svg");
+}
+
+.img-icon-video {
+  content: url("/dcse/images/videoIcon.svg");
+}
+
+.message-box {
+  background-color: #D4D5E3;
+  width: 98%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid transparent;
+}
+
+.message-box h2 {
+  color: black;
+}
+
+.nygov-back-to-top {
+	padding: .7em;
+	background-color: #888b8b;
+	position: fixed;
+	z-index: 999;
+	bottom: 2em;
+	right: 2em;
+	border: 2px solid rgba(255, 255, 255, 0.6);
+	cursor: pointer;
+}
+
+.nygov-back-to-top .fa {
+	color: #fff;
+	font-size: 1.5em;
+	line-height: 1em;
+}
+
+.nygov-back-to-top-hidden {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0.3s, opacity 0.3s linear;
+}
+
+.nygov-back-to-top-show {
+	visibility: visible;
+	opacity: 0.7;
+	transition: visibility 0.3s, opacity 0.3s linear;
+}
+
+.cs-upper {
+	clear: both;
+	padding-top: 0.3125em;
+	padding-bottom: 2em;
+	text-align: center;
+}
+
+.cs-upper p a.on {
+	opacity: 0.4;
+	transition: opacity .25s ease-in-out;
+}
+
+.cs-upper p a {
+	display: block;
+	text-decoration: none;
+	font-weight: 700;
+	font-size: 1.5em;
+	color: #333;
+	margin: auto;
+	padding: 0.375em;
+	background-color: #525357;
+	position: fixed;
+	z-index: 999;
+	bottom: 1.5em;
+	right: 1.5em;
+	text-align: right;
+	opacity: 0.0;
+	border: 2px solid #BBBCBC;
+	transition: opacity .25s ease-in-out;
+}
+
+/* .cs-upper p a .icon-bracket_left: before {
+	color: #fff;
+	transform: rotate(90deg);
+	display: block;
+} */
+
+.icon-bracket_left:before {
+	content: "\e60d";
+}
+
+#site-map-list {
+	list-style:none;
+}
+
+#site-map-list > li {
+	margin-bottom: 1em;
+}
+
+#payment-coupon {
+  width: 7.61in;
+}
+
+/* #payment-coupon input::placeholder,
+#payment-coupon textarea::placeholder {
+  color: transparent;
+  font-family: sans-serif;
+  font-size: 1em;
+} */
+
+#coupon-content {
+	font-size: 9pt;
+	margin-top: 10px;
+	margin-inline: 5px;
+}
+
+#coupon-content > div {
+	margin-top: -1px;
+}
+
+#coupon-content > div > div:first-child {
+	margin-top: -1px;
+}
+
+#coupon-content > div > div:first-child > .coupon-input:first-child {
+	margin-top: -1px;
+}
+
+.coupon-input {
+	display: flex;
+	gap: 0.1in;
+	/* padding-bottom: 0.12in; */
+}
+
+.coupon-input > label + * {
+	flex-grow: 1;
+}
+
+.coupon-mail > p {
+	line-height: 1.2em;
+	white-space: pre-line;
+	padding-inline-end: 0.125in;
+}
+
+.coupon-underline {
+	border-bottom: 2px solid #AAA;
+	margin-top: -1px;
+	padding: 0 2px;
+}
+
+.coupon-divide-y {
+	border-top: 4px solid #CCC;
+}
+
+.coupon-divide-x {
+	border-inline-end: 4px solid #CCC;
+}
+
+.coupon-pr {
+	padding-right: 0.25in;
+}
+
+.coupon-pl {
+	padding-left: 0.25in;
+}
+
+/* #payment-coupon input,
+#payment-coupon textarea {
+  border: 0;
+} */
+
+@media print {
+  body {
+    background-color: #FFF;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    color: #000;
+    font-size: 2em;
+    font-weight: 700;
+    margin: .5em 0;
+    padding: 0;
+  }
+
+  h2 {
+    color: #000;
+    font-size: 1.6em;
+    font-weight: 700;
+    margin: .5em 0;
+    padding: 0 0 .1em;
+  }
+
+  h3 {
+    color: #000;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: .5em 0;
+    padding: 0;
+  }
+
+  img {
+    border: 0;
+    width: auto;
+  }
+
+  p {
+    color: #000;
+    font-size: 1em;
+    font-weight: 400;
+    margin: .5em 0;
+    padding: 0;
+  }
+
+  #content {
+    background: #fff;
+    margin: 0px;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    border: none
+  }
+
+  #header,
+  #nygov-global-notification,
+  #nygov-universal-footer,
+  #nygov-universal-navigation,
+  #nygov-universal-notification,
+  #nav,
+  #footer,
+  #featured,
+  #footer-translate,
+  .nys-global-footer,
+  .nys-universal-container,
+  .footer-translate,
+  .upper,
+  .print-hide {
+    display: none;
+  }
+  
+  .print-no-border {
+    border: 0;
+  }
+  
+  #payment-coupon input::placeholder,
+  #payment-coupon textarea::placeholder {
+    color: #000;
+  }
+}
+
+/* Official Adobe PDF Color: Candy Apple Red = #F40F02*/
+/* 
+If used with an empty span, it doesn't matter if it is before or after.
+If used on a tag with content, that will determine where it is in relation to 
+the content, but will also set the font to icomoon because of the nys-global 
+css files 
+*/
+/* .icon-pdf:before {
+  content: '\f1c1';
+  color: #F40F02;
+  margin: 0 0.2em;
+  font-size: 1em;
+} */
+
+/* The underline looks weird with the icon */
+/* a[href$=".pdf"] {
+	text-decoration: none;
+} */
+/* 
+a[href$=".pdf"]:after {
+  font-family: 'icomoon';
+  content: '\f1c1';
+  color: #F40F02;
+  margin: 0 0.2em;
+  font-size: 1em;
+}
+
+a[href$=".pdf"]:before {
+  font-family: 'icomoon';
+  content: '\f1c1';
+  color: #F40F02;
+  margin: 0 0.2em;
+  font-size: 1em;
+} */
+/* How OTDA adds their PDF icons */
+/* .main .content-page a[href$=".pdf"] {
+  background: url(/ui/images/pdf.png) no-repeat right center;
+  padding: 0 14px 0 0;
+} */
+/* .content-page a[href$=".pdf"] {
+  background: url(/dcse/ui/icons/pdf.png) no-repeat right center;
+  // Expands to
+  background-image: url(/dcse/ui/icons/pdf.png);
+  background-position-x: right;
+  background-position-y: center;
+  background-size: initial;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: initial;
+  // Social Media Icons only supply image and size 
+  padding: 0 14px 0 0;
+} */
+
+.nys-global-header {
+  background-color: #43285D;
+}
+
+.nys-global-header>ul {
+  background-color: #43285D;
+}
+
+.nys-global-header>ul a {
+  border-bottom-color: #5f4875;
+}
+
+.nys-global-header>ul a:hover,
+.nys-global-header>ul a:active {
+  background-color: #21142e;
+}
+
+.nys-global-header>ul ul {
+  background-color: #43285D;
+}
+
+.nys-global-header.vertical ul li:first-of-type a {
+  border-top-color: #5f4875;
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+
+.nys-global-header.vertical ul li:first-of-type ul a {
+  border-top: 0;
+}
+
+.nys-global-header.vertical a:hover,
+.nys-global-header.vertical a:active {
+  background-color: transparent;
+}
+
+@media (min-width: 768px) {
+
+  .nys-global-header.horizontal.unstacked ul li a:hover,
+  .nys-global-header.horizontal.unstacked ul li a:active {
+    background-color: #43285D;
+  }
+
+  .nys-global-header.horizontal.unstacked ul li ul>li a:hover,
+  .nys-global-header.horizontal.unstacked ul li ul>li a:active {
+    background-color: #21142e;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+
+  .nys-global-header.horizontal.unstacked ul li a:hover,
+  .nys-global-header.horizontal.unstacked ul li a:active,
+  .nys-global-header.horizontal.stacked ul li a:hover,
+  .nys-global-header.horizontal.stacked ul li a:active {
+    background-color: #43285D;
+  }
+
+  .nys-global-header.horizontal.unstacked ul li ul>li a:hover,
+  .nys-global-header.horizontal.unstacked ul li ul>li a:active,
+  .nys-global-header.horizontal.stacked ul li ul>li a:hover,
+  .nys-global-header.horizontal.stacked ul li ul>li a:active {
+    background-color: #21142e;
+  }
+}
+
+.nys-global-footer {
+  background-color: #D4D5E3;
+}
+
+.nys-global-footer ul li a:hover,
+.nys-global-footer ul li a:active {
+  color: #43285D;
+}
+
+/* .icon-social-blogger,
+.icon-social-delicious,
+.icon-social-facebook,
+.icon-social-feed,
+.icon-social-flickr,
+.icon-social-foursqaure,
+.icon-social-github,
+.icon-social-google-plus,
+.icon-social-instagram,
+.icon-social-linkedin,
+.icon-social-mail,
+.icon-social-pinterest,
+.icon-social-reddit,
+.icon-social-share,
+.icon-social-tumblr,
+.icon-social-twitter,
+.icon-social-vimeo,
+.icon-social-yelp,
+.icon-social-youtube, */
+[class^="icon-social-"] {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  background-size: 20px 20px;
+}
+
+
+.icon-social-flickr {
+  background-image: url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-flickr.svg"), url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-flickr.png");
+}
+
+.icon-social-twitter {
+  background-image: url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-twitter.svg"), url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-twitter.png");
+}
+
+.icon-social-youtube {
+  background-image: url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-youtube.svg"), url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-youtube.png");
+}
+
+.icon-social-facebook {
+  background-image: url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-facebook.svg"), url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-facebook.png");
+}
+
+.icon-social-feed {
+  background-image: url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-feed.svg"), url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-feed.png");
+}
+
+.icon-social-foursqaure {
+  background-image: url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-foursqaure.svg"), url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-foursqaure.png");
+}
+
+.icon-social-delicious {
+  background-image: url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-delicious.svg"), url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-delicious.png");
+}
+
+.icon-social-github {
+  background-image: url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-github.svg"), url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-github.png");
+}
+
+.icon-social-google-plus {
+  background-image: url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-google-plus.svg"), url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-google-plus.png");
+}
+
+.icon-social-instagram {
+  background-image: url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-instagram.svg"), url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-instagram.png");
+}
+
+.icon-social-linkedin {
+  background-image: url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-linkedin.svg"), url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-linkedin.png");
+}
+
+.icon-social-mail {
+  background-image: url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-mail.svg"), url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-mail.png");
+}
+
+.icon-social-pinterest {
+  background-image: url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-pinterest.svg"), url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-pinterest.png");
+}
+
+.icon-social-reddit {
+  background-image: url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-reddit.svg"), url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-reddit.png");
+}
+
+.icon-social-share {
+  background-image: url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-share.svg"), url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-share.png");
+}
+
+.icon-social-tumblr {
+  background-image: url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-tumblr.svg"), url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-tumblr.png");
+}
+
+.icon-social-vimeo {
+  background-image: url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-vimeo.svg"), url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-vimeo.png");
+}
+
+.icon-social-yelp {
+  background-image: url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-yelp.svg"), url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-yelp.png");
+}
+
+.icon-social-blogger {
+  background-image: url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-blogger.svg"), url("/dcse/ui/icons/social/nys-brand-health-and-human-services/icon-social-blogger.png");
+}
+
+.nys-global-header {
+  color: #fff;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.018em;
+  position: relative;
+  border-bottom: 4px solid #fff;
+  font-weight: 600;
+  font-style: normal;
+  margin-bottom: 50px;
+}
+
+.nys-global-header a,
+.nys-global-header a:link,
+.nys-global-header a:visited,
+.nys-global-header a:hover,
+.nys-global-header a:active {
+  color: #fff;
+  text-decoration: none;
+  outline: 0;
+}
+
+.nys-global-header h1 {
+  font-family: 'D Sari Bold', Arial, sans-serif;
+  display: table-cell;
+  vertical-align: middle;
+  height: 80px;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.nys-global-header h1 a,
+.nys-global-header h1 a:link,
+.nys-global-header h1 a:visited,
+.nys-global-header h1 a:hover,
+.nys-global-header h1 a:active {
+  display: block;
+  padding: 0 30px;
+  color: #fff;
+}
+
+.nys-global-header h1 a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nys-global-header ul {
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+
+.nys-global-header ul li {
   padding: 0;
   margin: 0;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+.nys-global-header ul li.hidden {
+  display: none;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.nys-global-header ul li.active ul {
+  display: block;
 }
 
-a {
-  color: inherit;
+.nys-global-header ul > li:not(.active) > a[href='#']:after {
+  background-size: 16px;
+  background-repeat: no-repeat;
+  width: 2em;
+  height: 1.2em;
+  content: '';
+  position: absolute;
+  top: 39%;
+}
+
+html:not([dir='rtl']) .nys-global-header ul > li:not(.active) > a[href='#']:after {
+  background-image: url('/dcse/ui/icons/icon-arrow-right.svg'),
+    url('/dcse/ui/icons/icon-arrow-right.png');
+  right: 10px;
+}
+
+html[dir='rtl'] .nys-global-header ul > li:not(.active) > a[href='#']:after {
+  background-image: url('/dcse/ui/icons/icon-arrow-left.svg'),
+    url('/dcse/ui/icons/icon-arrow-left.png');
+  left: 10px;
+}
+
+.nys-global-header > ul {
+  position: absolute;
+  width: 255px;
+  border-top: 4px solid #fff;
+  z-index: 2;
+}
+
+.nys-global-header > ul li {
+  display: block;
+  list-style: none;
+  position: relative;
+}
+
+.nys-global-header > ul li.active > a:link,
+.nys-global-header > ul li.active > a:visited {
+  padding-left: 48px;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  color: #fff;
+}
+
+.nys-global-header > ul li.active > a:before {
+  background-size: 16px;
+  background-repeat: no-repeat;
+  width: 2em;
+  height: 1.2em;
+  display: inline-block;
+  content: '';
+  position: absolute;
+  top: 30px;
+}
+
+html:not([dir='rtl']) .nys-global-header > ul li.active > a:before {
+  background-image: url('/dcse/ui/icons/icon-arrow-left.svg'),
+    url('/dcse/ui/icons/icon-arrow-left.png');
+  left: 18px;
+}
+
+html[dir='rtl'] .nys-global-header > ul li.active > a:before {
+  background-image: url('/dcse/ui/icons/icon-arrow-right.svg'),
+    url('/dcse/ui/icons/icon-arrow-right.png');
+  right: 18px;
+}
+
+.nys-global-header > ul li.active > a:after {
+  background-image: none;
+}
+
+.nys-global-header > ul li a:link,
+.nys-global-header > ul li a:visited {
+  display: block;
+  padding: 30px;
+  font-family: 'Proxima Nova', Arial, sans-serif;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+html:not([dir='rtl']) .nys-global-header > ul li a:link,
+html:not([dir='rtl']) .nys-global-header > ul li a:visited {
+  padding-right: 48px;
+}
+
+html[dir='rtl'] .nys-global-header > ul li a:link,
+html[dir='rtl'] .nys-global-header > ul li a:visited {
+  padding-left: 48px;
+}
+
+.nys-global-header > ul li a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nys-global-header > ul li ul {
+  padding: 0;
+  display: none;
+  position: initial;
+  z-index: 5;
+  width: 100%;
+}
+
+.nys-global-header > ul li ul > li > a {
+  letter-spacing: 0.02em;
+  font-weight: bold;
+}
+
+.nys-global-header .active {
+  display: block;
+}
+
+.nys-global-header .nav-toggle {
+  text-indent: -9999px;
+  color: transparent;
+}
+
+.nys-global-header .nav-toggle a,
+.nys-global-header .nav-toggle a:link,
+.nys-global-header .nav-toggle a:visited,
+.nys-global-header .nav-toggle a:hover,
+.nys-global-header .nav-toggle a:active {
+  width: 65px;
+  height: 80px;
+  display: block;
+  background-image: url('/dcse/ui/icons/icon-menu.svg'),
+    url('/dcse/ui/icons/icon-menu.png');
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+html:not([dir='rtl']) .nys-global-header .nav-toggle a,
+html:not([dir='rtl']) .nys-global-header .nav-toggle a:link,
+html:not([dir='rtl']) .nys-global-header .nav-toggle a:visited,
+html:not([dir='rtl']) .nys-global-header .nav-toggle a:hover,
+html:not([dir='rtl']) .nys-global-header .nav-toggle a:active {
+  float: left;
+}
+
+html[dir='rtl'] .nys-global-header .nav-toggle a,
+html[dir='rtl'] .nys-global-header .nav-toggle a:link,
+html[dir='rtl'] .nys-global-header .nav-toggle a:visited,
+html[dir='rtl'] .nys-global-header .nav-toggle a:hover,
+html[dir='rtl'] .nys-global-header .nav-toggle a:active {
+  float: right;
+}
+
+.nys-global-footer {
+  clear: both;
+}
+
+.nys-global-footer h3,
+.nys-global-footer h4,
+.nys-global-footer p,
+.nys-global-footer span,
+.nys-global-footer a,
+.nys-global-footer a:link,
+.nys-global-footer a:visited,
+.nys-global-footer a:hover,
+.nys-global-footer a:active {
+  color: #000;
+}
+
+.nys-global-footer h3,
+.nys-global-footer h4 {
+  font-weight: 800;
+}
+
+.nys-global-footer h4,
+.nys-global-footer span,
+.nys-global-footer a,
+.nys-global-footer a:link,
+.nys-global-footer a:visited,
+.nys-global-footer a:hover,
+.nys-global-footer a:active {
+  font-family: 'Proxima Nova', Arial, sans-serif;
+}
+
+.nys-global-footer .footer-container {
+  padding: 0 0 36px;
+  display: block;
+  margin: 0 15px;
+}
+
+.nys-global-footer .footer-container h3 {
+  font-family: 'D Sari Bold', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 32px 30px;
+  margin: 0;
+}
+
+.nys-global-footer .footer-container h4 {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  clear: both;
+}
+
+html:not([dir='rtl']) .nys-global-footer .footer-container h4 {
+  margin: 0 16px 12px 30px;
+}
+
+html[dir='rtl'] .nys-global-footer .footer-container h4 {
+  margin: 0 30px 12px 16px;
+}
+
+.nys-global-footer .footer-container h4:after {
+  content: '';
+  display: block;
+  height: 1px;
+  background-color: #000;
+  width: 96%;
+  margin-top: 3px;
+}
+
+.nys-global-footer .footer-container a,
+.nys-global-footer .footer-container a:link,
+.nys-global-footer .footer-container a:visited {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.nys-global-footer .footer-container a:hover,
+.nys-global-footer .footer-container a:active {
+  text-decoration: underline;
+  color: #000;
+}
+
+.nys-global-footer .footer-container ul {
+  padding: 0 30px;
+}
+
+.nys-global-footer .footer-container ul li {
+  width: 50%;
+  list-style-type: none;
+  margin: 0;
+  padding-bottom: 16px;
+}
+
+html:not([dir='rtl']) .nys-global-footer .footer-container ul li {
+  float: left;
+}
+
+html[dir='rtl'] .nys-global-footer .footer-container ul li {
+  float: right;
+}
+
+.nys-global-footer .footer-container ul li a,
+.nys-global-footer .footer-container ul li a:link,
+.nys-global-footer .footer-container ul li a:visited,
+.nys-global-footer .footer-container ul li a:hover,
+.nys-global-footer .footer-container ul li a:active {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  display: block;
+}
+
+html:not([dir='rtl']) .nys-global-footer .footer-container ul li a,
+html:not([dir='rtl']) .nys-global-footer .footer-container ul li a:link,
+html:not([dir='rtl']) .nys-global-footer .footer-container ul li a:visited,
+html:not([dir='rtl']) .nys-global-footer .footer-container ul li a:hover,
+html:not([dir='rtl']) .nys-global-footer .footer-container ul li a:active {
+  padding-right: 48px;
+}
+
+html[dir='rtl'] .nys-global-footer .footer-container ul li a,
+html[dir='rtl'] .nys-global-footer .footer-container ul li a:link,
+html[dir='rtl'] .nys-global-footer .footer-container ul li a:visited,
+html[dir='rtl'] .nys-global-footer .footer-container ul li a:hover,
+html[dir='rtl'] .nys-global-footer .footer-container ul li a:active {
+  padding-left: 48px;
+}
+
+.nys-global-footer .footer-container .footer-col {
+  float: none;
+  position: relative;
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 32px;
+  min-width: 100px;
+}
+
+.nys-global-footer .footer-container .social-media {
+  display: block;
+  clear: both;
+}
+
+.nys-global-footer .footer-container .social-media ul {
+  display: inline-block;
+  text-align: center;
+  width: 80%;
+}
+
+.nys-global-footer .footer-container .social-media ul li {
+  /* display: inline-block; // Floated elements are always block */
+  font-size: 12px;
+  line-height: 16px;
+  margin: 28px 40px 0;
+  width: 15%;
+  padding-bottom: 12px;
+}
+
+html:not([dir='rtl']) .nys-global-footer .footer-container .social-media ul li {
+  float: left;
+}
+
+html[dir='rtl'] .nys-global-footer .footer-container .social-media ul li {
+  float: right;
+}
+
+.nys-global-footer .footer-container .social-media ul li a {
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+html:not([dir='rtl']) .nys-global-footer .footer-container .social-media ul li a {
+  padding-right: 0;
+}
+
+html[dir='rtl'] .nys-global-footer .footer-container .social-media ul li a {
+  padding-left: 0;
+}
+
+.nys-global-footer .footer-container .social-media ul li a:hover span,
+.nys-global-footer .footer-container .social-media ul li a:active span {
+  text-decoration: underline;
+}
+
+.nys-global-footer .footer-container .social-media ul li a span:nth-child(even) {
+  display: inline-block;
+  margin-top: 3px;
+  margin-bottom: 1px;
+  padding-left: 6px;
+  padding-right: 6px;
+  position: absolute;
+}
+
+.nys-global-footer .footer-container .social-media img {
+  margin: 0 10px;
+}
+
+.nys-global-footer .footer-container .social-media .social-media-title {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  overflow: hidden;
+}
+
+.nys-global-footer .footer-container .social-media .social-media-title h4 {
+  /* display: inline-block; // Floated elements are always block */
+  font-weight: bold;
+  line-height: 16px;
+  overflow: hidden;
+  text-align: center;
+  width: 85.5%;
+}
+
+html:not([dir='rtl']) .nys-global-footer .footer-container .social-media .social-media-title h4 {
+  float: left;
+  margin: 0 0 16px 30px;
+}
+
+html[dir='rtl'] .nys-global-footer .footer-container .social-media .social-media-title h4 {
+  float: right;
+  margin: 0 30px 16px 0;
+}
+
+.nys-global-footer .footer-container .social-media .social-media-title h4:before,
+.nys-global-footer .footer-container .social-media .social-media-title h4:after {
+  background-color: #000;
+  content: '';
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 40%;
+  top: -1px;
+}
+
+html:not([dir='rtl']) .nys-global-footer .footer-container .social-media .social-media-title h4:before,
+html[dir='rtl'] .nys-global-footer .footer-container .social-media .social-media-title h4:after {
+  right: 1.5em;
+  margin-left: -50%;
+}
+
+html:not([dir='rtl']) .nys-global-footer .footer-container .social-media .social-media-title h4:after,
+html[dir='rtl'] .nys-global-footer .footer-container .social-media .social-media-title h4:before {
+  left: 1.5em;
+  margin-right: -50%;
+}
+
+.nys-global-footer .footer-container .social-media .social-media-links ul {
+  display: inline-block;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+}
+
+.nys-global-footer .footer-container .social-media .social-media-links ul li {
+  display: inline-block;
+  margin: 16px 20px 0;
+  width: 38%;
+}
+
+html:not([dir='rtl']) .nys-global-footer .footer-container .social-media .social-media-links ul li a {
+  padding-right: 48px;
+}
+
+html[dir='rtl'] .nys-global-footer .footer-container .social-media .social-media-links ul li a {
+  padding-left: 48px;
+}
+
+@media (min-width: 768px) {
+  .nys-global-header.horizontal,
+  .nys-global-header.vertical {
+    font-weight: bold;
+  }
+
+  .nys-global-header.horizontal h1 a,
+  .nys-global-header.horizontal h1 a:link,
+  .nys-global-header.horizontal h1 a:visited,
+  .nys-global-header.horizontal h1 a:hover,
+  .nys-global-header.horizontal h1 a:active,
+  .nys-global-header.vertical h1 a,
+  .nys-global-header.vertical h1 a:link,
+  .nys-global-header.vertical h1 a:visited,
+  .nys-global-header.vertical h1 a:hover,
+  .nys-global-header.vertical h1 a:active {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .nys-global-header.horizontal.unstacked,
+  .nys-global-header.vertical.unstacked {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .nys-global-header.horizontal.unstacked > ul,
+  .nys-global-header.vertical.unstacked > ul {
+    position: relative;
+    display: block;
+    border-top: 0;
+    width: auto;
+    /* vertical-align: bottom; // Vertical align is ignored with block display */
+  }
+
+  .nys-global-header.horizontal.unstacked > ul a,
+  .nys-global-header.vertical.unstacked > ul a {
+    border-bottom-width: 0;
+    padding: 8px 15px;
+  }
+
+  .nys-global-header.horizontal.unstacked > ul li,
+  .nys-global-header.horizontal.unstacked > ul li.hidden,
+  .nys-global-header.vertical.unstacked > ul li,
+  .nys-global-header.vertical.unstacked > ul li.hidden {
+    display: inline-block;
+    vertical-align: bottom;
+  }
+
+  .nys-global-header.horizontal.unstacked > ul li ul,
+  .nys-global-header.horizontal.unstacked > ul li.hidden ul,
+  .nys-global-header.vertical.unstacked > ul li ul,
+  .nys-global-header.vertical.unstacked > ul li.hidden ul {
+    position: absolute;
+    width: auto;
+    border-top: 4px solid #fff;
+  }
+
+  .nys-global-header.horizontal.unstacked > ul li ul li,
+  .nys-global-header.horizontal.unstacked > ul li.hidden ul li,
+  .nys-global-header.vertical.unstacked > ul li ul li,
+  .nys-global-header.vertical.unstacked > ul li.hidden ul li {
+    display: block;
+  }
+
+  .nys-global-header.horizontal.unstacked > ul li ul li a,
+  .nys-global-header.horizontal.unstacked > ul li.hidden ul li a,
+  .nys-global-header.vertical.unstacked > ul li ul li a,
+  .nys-global-header.vertical.unstacked > ul li.hidden ul li a {
+    padding: 15px;
+  }
+
+  html:not([dir='rtl']) .nys-global-header.horizontal.unstacked > ul li:last-child ul,
+  html:not([dir='rtl']) .nys-global-header.horizontal.unstacked > ul li.hidden:last-child ul,
+  html:not([dir='rtl']) .nys-global-header.vertical.unstacked > ul li:last-child ul,
+  html:not([dir='rtl']) .nys-global-header.vertical.unstacked > ul li.hidden:last-child ul {
+    right: 0;
+  }
+
+  html[dir='rtl'] .nys-global-header.horizontal.unstacked > ul li:last-child ul,
+  html[dir='rtl'] .nys-global-header.horizontal.unstacked > ul li.hidden:last-child ul,
+  html[dir='rtl'] .nys-global-header.vertical.unstacked > ul li:last-child ul,
+  html[dir='rtl'] .nys-global-header.vertical.unstacked > ul li.hidden:last-child ul {
+    left: 0;
+  }
+
+  .nys-global-header.horizontal.unstacked .nav-toggle,
+  .nys-global-header.vertical.unstacked .nav-toggle {
+    display: none;
+  }
+
+  .nys-global-header.horizontal.unstacked h1,
+  .nys-global-header.vertical.unstacked h1 {
+    height: auto;
+  }
+
+  .nys-global-header.horizontal.unstacked h1 a,
+  .nys-global-header.horizontal.unstacked h1 a:link,
+  .nys-global-header.horizontal.unstacked h1 a:visited,
+  .nys-global-header.horizontal.unstacked h1 a:hover,
+  .nys-global-header.horizontal.unstacked h1 a:active,
+  .nys-global-header.vertical.unstacked h1 a,
+  .nys-global-header.vertical.unstacked h1 a:link,
+  .nys-global-header.vertical.unstacked h1 a:visited,
+  .nys-global-header.vertical.unstacked h1 a:hover,
+  .nys-global-header.vertical.unstacked h1 a:active {
+    padding: 15px 30px 1px;
+  }
+
+  .nys-global-header.horizontal.unstacked > ul,
+  .nys-global-header.vertical.unstacked > ul {
+    display: inline-block;
+  }
+
+  html:not([dir='rtl']) .nys-global-header.horizontal.unstacked > ul,
+  html:not([dir='rtl']) .nys-global-header.vertical.unstacked > ul {
+    padding-left: 15px;
+  }
+
+  html[dir='rtl'] .nys-global-header.horizontal.unstacked > ul,
+  html[dir='rtl'] .nys-global-header.vertical.unstacked > ul {
+    padding-right: 15px;
+  }
+
+  .nys-global-header.horizontal.unstacked > ul li a,
+  .nys-global-header.horizontal.unstacked > ul li a:link,
+  .nys-global-header.horizontal.unstacked > ul li a:visited,
+  .nys-global-header.horizontal.unstacked > ul li a:hover,
+  .nys-global-header.horizontal.unstacked > ul li a:active,
+  .nys-global-header.vertical.unstacked > ul li a,
+  .nys-global-header.vertical.unstacked > ul li a:link,
+  .nys-global-header.vertical.unstacked > ul li a:visited,
+  .nys-global-header.vertical.unstacked > ul li a:hover,
+  .nys-global-header.vertical.unstacked > ul li a:active {
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+  }
+
+  html:not([dir='rtl']) .nys-global-header.horizontal.unstacked > ul li a,
+  html:not([dir='rtl']) .nys-global-header.horizontal.unstacked > ul li a:link,
+  html:not([dir='rtl']) .nys-global-header.horizontal.unstacked > ul li a:visited,
+  html:not([dir='rtl']) .nys-global-header.horizontal.unstacked > ul li a:hover,
+  html:not([dir='rtl']) .nys-global-header.horizontal.unstacked > ul li a:active,
+  html:not([dir='rtl']) .nys-global-header.vertical.unstacked > ul li a,
+  html:not([dir='rtl']) .nys-global-header.vertical.unstacked > ul li a:link,
+  html:not([dir='rtl']) .nys-global-header.vertical.unstacked > ul li a:visited,
+  html:not([dir='rtl']) .nys-global-header.vertical.unstacked > ul li a:hover,
+  html:not([dir='rtl']) .nys-global-header.vertical.unstacked > ul li a:active {
+    padding-left: 15px;
+  }
+
+  html[dir='rtl'] .nys-global-header.horizontal.unstacked > ul li a,
+  html[dir='rtl'] .nys-global-header.horizontal.unstacked > ul li a:link,
+  html[dir='rtl'] .nys-global-header.horizontal.unstacked > ul li a:visited,
+  html[dir='rtl'] .nys-global-header.horizontal.unstacked > ul li a:hover,
+  html[dir='rtl'] .nys-global-header.horizontal.unstacked > ul li a:active,
+  html[dir='rtl'] .nys-global-header.vertical.unstacked > ul li a,
+  html[dir='rtl'] .nys-global-header.vertical.unstacked > ul li a:link,
+  html[dir='rtl'] .nys-global-header.vertical.unstacked > ul li a:visited,
+  html[dir='rtl'] .nys-global-header.vertical.unstacked > ul li a:hover,
+  html[dir='rtl'] .nys-global-header.vertical.unstacked > ul li a:active {
+    padding-right: 15px;
+  }
+
+  .nys-global-header.horizontal.unstacked > ul li ul,
+  .nys-global-header.vertical.unstacked > ul li ul {
+    width: 170px;
+  }
+
+  .nys-global-header.horizontal.unstacked > ul li ul li a,
+  .nys-global-header.horizontal.unstacked > ul li ul li a:link,
+  .nys-global-header.horizontal.unstacked > ul li ul li a:visited,
+  .nys-global-header.horizontal.unstacked > ul li ul li a:hover,
+  .nys-global-header.horizontal.unstacked > ul li ul li a:active,
+  .nys-global-header.vertical.unstacked > ul li ul li a,
+  .nys-global-header.vertical.unstacked > ul li ul li a:link,
+  .nys-global-header.vertical.unstacked > ul li ul li a:visited,
+  .nys-global-header.vertical.unstacked > ul li ul li a:hover,
+  .nys-global-header.vertical.unstacked > ul li ul li a:active {
+    font-size: 12px;
+    line-height: 17px;
+    font-weight: 600;
+  }
+
+  .nys-global-header.horizontal.unstacked ul > li > a[href='#']:after,
+  .nys-global-header.vertical.unstacked ul > li > a[href='#']:after {
+    background-image: none;
+    width: 0;
+    margin: 0;
+    display: none;
+  }
+
+  .nys-global-header.horizontal.unstacked > ul li.active > a:before,
+  .nys-global-header.vertical.unstacked > ul li.active > a:before {
+    background-image: none;
+    width: 0;
+    margin: 0;
+    display: none;
+  }
+
+  .nys-global-header.horizontal.stacked,
+  .nys-global-header.vertical.stacked {
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.03em;
+  }
+
+  .nys-global-header.horizontal.stacked > ul,
+  .nys-global-header.vertical.stacked > ul {
+    width: 300px;
+  }
+
+  .nys-global-header.horizontal.stacked > ul a,
+  .nys-global-header.horizontal.stacked > ul a:link,
+  .nys-global-header.horizontal.stacked > ul a:visited,
+  .nys-global-header.horizontal.stacked > ul a:hover,
+  .nys-global-header.horizontal.stacked > ul a:active,
+  .nys-global-header.vertical.stacked > ul a,
+  .nys-global-header.vertical.stacked > ul a:link,
+  .nys-global-header.vertical.stacked > ul a:visited,
+  .nys-global-header.vertical.stacked > ul a:hover,
+  .nys-global-header.vertical.stacked > ul a:active {
+    font-weight: bold;
+  }
+
+  .nys-global-header.horizontal.stacked > ul li.active > a:before,
+  .nys-global-header.vertical.stacked > ul li.active > a:before {
+    background-size: 18px;
+    top: 31px;
+  }
+
+  .nys-global-header.horizontal.stacked > ul > li > a[href='#']:after,
+  .nys-global-header.vertical.stacked > ul > li > a[href='#']:after {
+    background-size: 18px;
+    top: 38%;
+  }
+
+  .nys-global-footer .footer-container h3 {
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0;
+  }
+
+  .nys-global-footer .footer-container h4 {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 14px;
+  }
+
+  .nys-global-footer .footer-container h4:after {
+    width: 27%;
+  }
+
+  .nys-global-footer .footer-container ul li {
+    width: 32%;
+    padding-bottom: 18px;
+  }
+
+  html:not([dir='rtl']) .nys-global-footer .footer-container ul li {
+    float: left;
+  }
+
+  html[dir='rtl'] .nys-global-footer .footer-container ul li {
+    float: right;
+  }
+
+  .nys-global-footer .footer-container ul li a,
+  .nys-global-footer .footer-container ul li a:link,
+  .nys-global-footer .footer-container ul li a:visited,
+  .nys-global-footer .footer-container ul li a:hover,
+  .nys-global-footer .footer-container ul li a:active {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .nys-global-footer .footer-container .footer-col {
+    margin-bottom: 18px;
+  }
+
+  .nys-global-footer .footer-container .social-media {
+    margin-top: 12px;
+  }
+
+  html:not([dir='rtl']) .nys-global-footer .footer-container .social-media img {
+    margin-right: 5px;
+  }
+
+  html[dir='rtl'] .nys-global-footer .footer-container .social-media img {
+    margin-left: 5px;
+  }
+
+  .nys-global-footer .footer-container .social-media .social-media-title h4 {
+    width: 94%;
+    margin: 0 3% 36px;
+  }
+
+  .nys-global-footer .footer-container .social-media .social-media-title:before,
+  .nys-global-footer .footer-container .social-media .social-media-title:after {
+    margin-top: 0;
+  }
+
+  html:not([dir='rtl']) .nys-global-footer .footer-container .social-media .social-media-title:before,
+  html[dir='rtl'] .nys-global-footer .footer-container .social-media .social-media-title:after {
+    right: 2.5em;
+    margin-left: -50%;
+  }
+
+  html[dir='rtl'] .nys-global-footer .footer-container .social-media .social-media-title:before,
+  html:not([dir='rtl']) .nys-global-footer .footer-container .social-media .social-media-title:after {
+    left: 2.5em;
+    margin-right: -50%;
+  }
+
+  .nys-global-footer .footer-container .social-media .social-media-links {
+    display: table;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .nys-global-footer .footer-container .social-media .social-media-links ul {
+    display: table-row;
+  }
+
+  .nys-global-footer .footer-container .social-media .social-media-links ul li {
+    float: none !important;
+    width: auto;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0;
+    padding: 0;
+    display: table-cell;
+  }
+
+  html:not([dir='rtl']) .nys-global-footer .footer-container .social-media .social-media-links ul li a {
+    padding-right: 20px;
+  }
+
+  html[dir='rtl'] .nys-global-footer .footer-container .social-media .social-media-links ul li a {
+    padding-left: 20px;
+  }
+
+  .nys-global-footer .footer-container .social-media ul li a span:nth-child(even) {
+    margin-top: 6px;
+    position: relative;
+    top: -5px;
+  }
+
+  html:not([dir='rtl']) .nys-global-footer .footer-container .social-media ul li a span:nth-child(even) {
+    padding-left: 2px;
+  }
+
+  html[dir='rtl'] .nys-global-footer .footer-container .social-media ul li a span:nth-child(even) {
+    padding-right: 2px;
+  }
+
+  html:not([dir='rtl']) .nys-global-footer .footer-container .social-media ul li:last-child a {
+    padding-left: 7.5px;
+  }
+
+  html[dir='rtl'] .nys-global-footer .footer-container .social-media ul li:last-child a {
+    padding-right: 7.5px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nys-global-header.horizontal > ul,
+  .nys-global-header.horizontal h1,
+  .nys-global-header.vertical > ul,
+  .nys-global-header.vertical h1 {
+    display: inline-block;
+  }
+
+  .nys-global-header.unstacked.horizontal,
+  .nys-global-header.stacked.horizontal,
+  .nys-global-header.vertical {
+    height: auto;
+    font-size: 16px;
+  }
+
+  .nys-global-header.unstacked.horizontal h1,
+  .nys-global-header.stacked.horizontal h1,
+  .nys-global-header.vertical h1 {
+    width: 300px;
+    padding: 0 30px;
+  }
+
+  .nys-global-header.unstacked.horizontal h1 a,
+  .nys-global-header.unstacked.horizontal h1 a:link,
+  .nys-global-header.unstacked.horizontal h1 a:visited,
+  .nys-global-header.unstacked.horizontal h1 a:hover,
+  .nys-global-header.unstacked.horizontal h1 a:active,
+  .nys-global-header.stacked.horizontal h1 a,
+  .nys-global-header.stacked.horizontal h1 a:link,
+  .nys-global-header.stacked.horizontal h1 a:visited,
+  .nys-global-header.stacked.horizontal h1 a:hover,
+  .nys-global-header.stacked.horizontal h1 a:active,
+  .nys-global-header.vertical h1 a,
+  .nys-global-header.vertical h1 a:link,
+  .nys-global-header.vertical h1 a:visited,
+  .nys-global-header.vertical h1 a:hover,
+  .nys-global-header.vertical h1 a:active {
+    font-size: 22px;
+    line-height: 26px;
+    display: table-cell;
+    height: 75px;
+    vertical-align: middle;
+    padding: 0 15px;
+  }
+
+  .nys-global-header.unstacked.horizontal h1 a span,
+  .nys-global-header.unstacked.horizontal h1 a:link span,
+  .nys-global-header.unstacked.horizontal h1 a:visited span,
+  .nys-global-header.unstacked.horizontal h1 a:hover span,
+  .nys-global-header.unstacked.horizontal h1 a:active span,
+  .nys-global-header.stacked.horizontal h1 a span,
+  .nys-global-header.stacked.horizontal h1 a:link span,
+  .nys-global-header.stacked.horizontal h1 a:visited span,
+  .nys-global-header.stacked.horizontal h1 a:hover span,
+  .nys-global-header.stacked.horizontal h1 a:active span,
+  .nys-global-header.vertical h1 a span,
+  .nys-global-header.vertical h1 a:link span,
+  .nys-global-header.vertical h1 a:visited span,
+  .nys-global-header.vertical h1 a:hover span,
+  .nys-global-header.vertical h1 a:active span {
+    display: inline-block;
+  }
+
+  .nys-global-header.unstacked.horizontal > ul,
+  .nys-global-header.stacked.horizontal > ul,
+  .nys-global-header.vertical > ul {
+    padding: 0 30px;
+  }
+
+  .nys-global-header.unstacked.horizontal > ul li a,
+  .nys-global-header.unstacked.horizontal > ul li a:link,
+  .nys-global-header.unstacked.horizontal > ul li a:visited,
+  .nys-global-header.unstacked.horizontal > ul li a:hover,
+  .nys-global-header.unstacked.horizontal > ul li a:active,
+  .nys-global-header.stacked.horizontal > ul li a,
+  .nys-global-header.stacked.horizontal > ul li a:link,
+  .nys-global-header.stacked.horizontal > ul li a:visited,
+  .nys-global-header.stacked.horizontal > ul li a:hover,
+  .nys-global-header.stacked.horizontal > ul li a:active,
+  .nys-global-header.vertical > ul li a,
+  .nys-global-header.vertical > ul li a:link,
+  .nys-global-header.vertical > ul li a:visited,
+  .nys-global-header.vertical > ul li a:hover,
+  .nys-global-header.vertical > ul li a:active {
+    font-size: 16px;
+    letter-spacing: 0.03em;
+    display: table-cell;
+    height: 75px;
+    vertical-align: middle;
+    padding: 0 15px;
+  }
+
+  .nys-global-header.unstacked.horizontal > ul li a:before,
+  .nys-global-header.unstacked.horizontal > ul li a:after,
+  .nys-global-header.unstacked.horizontal > ul li a:link:before,
+  .nys-global-header.unstacked.horizontal > ul li a:link:after,
+  .nys-global-header.unstacked.horizontal > ul li a:visited:before,
+  .nys-global-header.unstacked.horizontal > ul li a:visited:after,
+  .nys-global-header.unstacked.horizontal > ul li a:hover:before,
+  .nys-global-header.unstacked.horizontal > ul li a:hover:after,
+  .nys-global-header.unstacked.horizontal > ul li a:active:before,
+  .nys-global-header.unstacked.horizontal > ul li a:active:after,
+  .nys-global-header.stacked.horizontal > ul li a:before,
+  .nys-global-header.stacked.horizontal > ul li a:after,
+  .nys-global-header.stacked.horizontal > ul li a:link:before,
+  .nys-global-header.stacked.horizontal > ul li a:link:after,
+  .nys-global-header.stacked.horizontal > ul li a:visited:before,
+  .nys-global-header.stacked.horizontal > ul li a:visited:after,
+  .nys-global-header.stacked.horizontal > ul li a:hover:before,
+  .nys-global-header.stacked.horizontal > ul li a:hover:after,
+  .nys-global-header.stacked.horizontal > ul li a:active:before,
+  .nys-global-header.stacked.horizontal > ul li a:active:after,
+  .nys-global-header.vertical > ul li a:before,
+  .nys-global-header.vertical > ul li a:after,
+  .nys-global-header.vertical > ul li a:link:before,
+  .nys-global-header.vertical > ul li a:link:after,
+  .nys-global-header.vertical > ul li a:visited:before,
+  .nys-global-header.vertical > ul li a:visited:after,
+  .nys-global-header.vertical > ul li a:hover:before,
+  .nys-global-header.vertical > ul li a:hover:after,
+  .nys-global-header.vertical > ul li a:active:before,
+  .nys-global-header.vertical > ul li a:active:after {
+    background-image: none;
+  }
+
+  .nys-global-header.unstacked.horizontal > ul li ul,
+  .nys-global-header.stacked.horizontal > ul li ul,
+  .nys-global-header.vertical > ul li ul {
+    padding: 5px 0px;
+    top: auto;
+    width: 300px;
+  }
+
+  .nys-global-header.unstacked.horizontal > ul li ul li,
+  .nys-global-header.stacked.horizontal > ul li ul li,
+  .nys-global-header.vertical > ul li ul li {
+    height: auto;
+  }
+
+  .nys-global-header.unstacked.horizontal > ul li ul li a,
+  .nys-global-header.unstacked.horizontal > ul li ul li a:link,
+  .nys-global-header.unstacked.horizontal > ul li ul li a:visited,
+  .nys-global-header.unstacked.horizontal > ul li ul li a:hover,
+  .nys-global-header.unstacked.horizontal > ul li ul li a:active,
+  .nys-global-header.stacked.horizontal > ul li ul li a,
+  .nys-global-header.stacked.horizontal > ul li ul li a:link,
+  .nys-global-header.stacked.horizontal > ul li ul li a:visited,
+  .nys-global-header.stacked.horizontal > ul li ul li a:hover,
+  .nys-global-header.stacked.horizontal > ul li ul li a:active,
+  .nys-global-header.vertical > ul li ul li a,
+  .nys-global-header.vertical > ul li ul li a:link,
+  .nys-global-header.vertical > ul li ul li a:visited,
+  .nys-global-header.vertical > ul li ul li a:hover,
+  .nys-global-header.vertical > ul li ul li a:active {
+    font-size: 16px;
+    line-height: 20px;
+    height: auto;
+    display: block;
+    padding: 15px;
+  }
+
+  .nys-global-header.unstacked.horizontal > ul li:last-child ul,
+  .nys-global-header.stacked.horizontal > ul li:last-child ul,
+  .nys-global-header.vertical > ul li:last-child ul {
+    left: auto;
+  }
+
+  .nys-global-header.stacked.horizontal > ul,
+  .nys-global-header.vertical > ul {
+    position: relative;
+    display: block;
+    border-top: 0;
+    width: auto;
+    /* vertical-align: bottom; // Vertical Align is ignored with block display */
+  }
+
+  .nys-global-header.stacked.horizontal > ul a,
+  .nys-global-header.vertical > ul a {
+    border-bottom-width: 0;
+    padding: 8px 15px;
+  }
+
+  .nys-global-header.stacked.horizontal > ul li,
+  .nys-global-header.stacked.horizontal > ul li.hidden,
+  .nys-global-header.vertical > ul li,
+  .nys-global-header.vertical > ul li.hidden {
+    display: inline-block;
+    vertical-align: bottom;
+  }
+
+  .nys-global-header.stacked.horizontal > ul li ul,
+  .nys-global-header.stacked.horizontal > ul li.hidden ul,
+  .nys-global-header.vertical > ul li ul,
+  .nys-global-header.vertical > ul li.hidden ul {
+    position: absolute;
+    width: auto;
+    border-top: 4px solid #fff;
+  }
+
+  .nys-global-header.stacked.horizontal > ul li ul li,
+  .nys-global-header.stacked.horizontal > ul li.hidden ul li,
+  .nys-global-header.vertical > ul li ul li,
+  .nys-global-header.vertical > ul li.hidden ul li {
+    display: block;
+  }
+
+  .nys-global-header.stacked.horizontal > ul li ul li a,
+  .nys-global-header.stacked.horizontal > ul li.hidden ul li a,
+  .nys-global-header.vertical > ul li ul li a,
+  .nys-global-header.vertical > ul li.hidden ul li a {
+    padding: 15px;
+  }
+
+  html:not([dir='rtl']) .nys-global-header.stacked.horizontal > ul li:last-child ul,
+  html:not([dir='rtl']) .nys-global-header.stacked.horizontal > ul li.hidden:last-child ul,
+  html:not([dir='rtl']) .nys-global-header.vertical > ul li:last-child ul,
+  html:not([dir='rtl']) .nys-global-header.vertical > ul li.hidden:last-child ul {
+    right: 0;
+  }
+
+  html[dir='rtl'] .nys-global-header.stacked.horizontal > ul li:last-child ul,
+  html[dir='rtl'] .nys-global-header.stacked.horizontal > ul li.hidden:last-child ul,
+  html[dir='rtl'] .nys-global-header.vertical > ul li:last-child ul,
+  html[dir='rtl'] .nys-global-header.vertical > ul li.hidden:last-child ul {
+    left: 0;
+  }
+
+  .nys-global-header.stacked.horizontal .nav-toggle,
+  .nys-global-header.vertical .nav-toggle {
+    display: none;
+  }
+
+  .nys-global-header.stacked.horizontal h1,
+  .nys-global-header.vertical h1 {
+    display: block;
+    width: auto;
+    height: auto;
+  }
+
+  .nys-global-header.stacked.horizontal h1 a,
+  .nys-global-header.stacked.horizontal h1 a:link,
+  .nys-global-header.stacked.horizontal h1 a:visited,
+  .nys-global-header.stacked.horizontal h1 a:hover,
+  .nys-global-header.stacked.horizontal h1 a:active,
+  .nys-global-header.vertical h1 a,
+  .nys-global-header.vertical h1 a:link,
+  .nys-global-header.vertical h1 a:visited,
+  .nys-global-header.vertical h1 a:hover,
+  .nys-global-header.vertical h1 a:active {
+    height: 65px;
+  }
+
+  .nys-global-header.stacked.horizontal > ul,
+  .nys-global-header.vertical > ul {
+    display: block;
+  }
+
+  .nys-global-header.stacked.horizontal > ul li a,
+  .nys-global-header.stacked.horizontal > ul li a:link,
+  .nys-global-header.stacked.horizontal > ul li a:visited,
+  .nys-global-header.stacked.horizontal > ul li a:hover,
+  .nys-global-header.stacked.horizontal > ul li a:active,
+  .nys-global-header.vertical > ul li a,
+  .nys-global-header.vertical > ul li a:link,
+  .nys-global-header.vertical > ul li a:visited,
+  .nys-global-header.vertical > ul li a:hover,
+  .nys-global-header.vertical > ul li a:active {
+    height: 53px;
+  }
+
+  .nys-global-header.stacked.horizontal > ul li ul,
+  .nys-global-header.vertical > ul li ul {
+    top: auto;
+    height: auto;
+    width: 300px;
+  }
+
+  .nys-global-header.stacked.horizontal > ul li ul li a,
+  .nys-global-header.stacked.horizontal > ul li ul li a:link,
+  .nys-global-header.stacked.horizontal > ul li ul li a:visited,
+  .nys-global-header.stacked.horizontal > ul li ul li a:hover,
+  .nys-global-header.stacked.horizontal > ul li ul li a:active,
+  .nys-global-header.vertical > ul li ul li a,
+  .nys-global-header.vertical > ul li ul li a:link,
+  .nys-global-header.vertical > ul li ul li a:visited,
+  .nys-global-header.vertical > ul li ul li a:hover,
+  .nys-global-header.vertical > ul li ul li a:active {
+    height: auto;
+    padding: 15px;
+  }
+
+  .nys-global-header.stacked.horizontal ul > li > a[href='#']:after,
+  .nys-global-header.vertical ul > li > a[href='#']:after {
+    background-image: none;
+    width: 0;
+    margin: 0;
+    display: none;
+  }
+
+  .nys-global-header.stacked.horizontal > ul li.active > a:before,
+  .nys-global-header.vertical > ul li.active > a:before {
+    background-image: none;
+    width: 0;
+    margin: 0;
+    display: none;
+  }
+
+  .nys-global-header.vertical {
+    width: 300px;
+    height: auto;
+    border-bottom: 0;
+  }
+
+  html:not([dir='rtl']) .nys-global-header.vertical {
+    float: left;
+  }
+  html[dir='rtl'] .nys-global-header.vertical {
+    float: right;
+  }
+
+  .nys-global-header.vertical h1 {
+    padding: 0;
+    height: auto;
+  }
+
+  .nys-global-header.vertical h1 a,
+  .nys-global-header.vertical h1 a:link,
+  .nys-global-header.vertical h1 a:visited,
+  .nys-global-header.vertical h1 a:hover,
+  .nys-global-header.vertical h1 a:active {
+    display: block;
+    height: auto;
+    padding: 30px 15px;
+  }
+
+  .nys-global-header.vertical ul {
+    width: 300px;
+    padding: 0;
+  }
+
+  .nys-global-header.vertical ul li {
+    display: block;
+  }
+
+  .nys-global-header.vertical ul li.active > a,
+  .nys-global-header.vertical ul li.active > a:link,
+  .nys-global-header.vertical ul li.active > a:visited,
+  .nys-global-header.vertical ul li.active > a:hover,
+  .nys-global-header.vertical ul li.active > a:active {
+    padding: 0 24px;
+  }
+
+  .nys-global-header.vertical ul li.active > a:before {
+    background-size: 16px;
+    background-repeat: no-repeat;
+    width: 2em;
+    height: 1.2em;
+    display: inline-block;
+    content: '';
+    position: absolute;
+    top: 30px;
+  }
+
+  html:not([dir='rtl']) .nys-global-header.vertical ul li.active > a:before {
+    background-image: url('/dcse/ui/icons/icon-arrow-left.svg'),
+      url('/dcse/ui/icons/icon-arrow-left.png');
+    left: 18px;
+  }
+
+  html[dir='rtl'] .nys-global-header.vertical ul li.active > a:before {
+    background-image: url('/dcse/ui/icons/icon-arrow-right.svg'),
+      url('/dcse/ui/icons/icon-arrow-right.png');
+    right: 18px;
+  }
+
+  .nys-global-header.vertical ul li a,
+  .nys-global-header.vertical ul li a:link,
+  .nys-global-header.vertical ul li a:visited,
+  .nys-global-header.vertical ul li a:hover,
+  .nys-global-header.vertical ul li a:active {
+    height: auto;
+    display: block;
+    line-height: 1.5;
+    margin: 0 15px;
+    padding: 30px 0;
+  }
+
+  .nys-global-header.vertical ul li.hidden {
+    display: block;
+  }
+
+  .nys-global-header.vertical ul li ul {
+    border-top: 0;
+    padding: 0;
+    position: initial;
+  }
+
+  .nys-global-header.vertical ul li ul li:first-of-type a {
+    border-top: 0;
+  }
+
+  .nys-global-header.vertical ul li ul li a,
+  .nys-global-header.vertical ul li ul li a:link,
+  .nys-global-header.vertical ul li ul li a:visited,
+  .nys-global-header.vertical ul li ul li a:hover,
+  .nys-global-header.vertical ul li ul li a:active {
+    padding: 0 24px;
+  }
+
+  html:not([dir='rtl']) .nys-global-nav-content-container {
+    margin-left: 330px;
+  }
+
+  html[dir='rtl'] .nys-global-nav-content-container {
+    margin-right: 330px;
+  }
+
+  .nys-global-footer .footer-container h3 {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  html:not([dir='rtl']) .nys-global-footer .footer-container h4 {
+    margin-right: 0;
+  }
+
+  html[dir='rtl'] .nys-global-footer .footer-container h4 {
+    margin-left: 0;
+  }
+
+  .nys-global-footer .footer-container h4:after {
+    width: 98%;
+  }
+
+  .nys-global-footer .footer-container ul {
+    display: block;
+    padding: 0;
+  }
+
+  .nys-global-footer .footer-container ul li {
+    width: auto;
+    float: none !important;
+  }
+
+  html:not([dir='rtl']) .nys-global-footer .footer-container ul li {
+    padding-left: 30px;
+  }
+
+  html[dir='rtl'] .nys-global-footer .footer-container ul li {
+    padding-right: 30px;
+  }
+
+  html:not([dir='rtl']) .nys-global-footer .footer-container ul li a,
+  html:not([dir='rtl']) .nys-global-footer .footer-container ul li a:link,
+  html:not([dir='rtl']) .nys-global-footer .footer-container ul li a:visited,
+  html:not([dir='rtl']) .nys-global-footer .footer-container ul li a:hover,
+  html:not([dir='rtl']) .nys-global-footer .footer-container ul li a:active {
+    padding-right: 0;
+  }
+
+  html[dir='rtl'] .nys-global-footer .footer-container ul li a,
+  html[dir='rtl'] .nys-global-footer .footer-container ul li a:link,
+  html[dir='rtl'] .nys-global-footer .footer-container ul li a:visited,
+  html[dir='rtl'] .nys-global-footer .footer-container ul li a:hover,
+  html[dir='rtl'] .nys-global-footer .footer-container ul li a:active {
+    padding-left: 0;
+  }
+
+  .nys-global-footer .footer-container .footer-col {
+    width: 18%;
+    margin-bottom: 18px;
+  }
+
+  html:not([dir='rtl']) .nys-global-footer .footer-container .footer-col {
+    float: left;
+    margin-right: 2%;
+  }
+
+  html[dir='rtl'] .nys-global-footer .footer-container .footer-col {
+    float: right;
+    margin-left: 2%;
+  }
+
+  .nys-global-footer .footer-container .social-media {
+    margin: 0 auto;
+  }
+
+  .nys-global-footer .footer-container .social-media .social-media-title h4 {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .nys-global-footer .footer-container .social-media .social-media-links {
+    width: 85%;
+  }
+
+  .nys-global-footer .footer-container .social-media .social-media-links ul li:last-child a {
+    padding: 0 15px;
+  }
+
+  .nys-global-footer .footer-container.nys-global-footer-cols-1 .footer-col {
+    width: 97%;
+  }
+
+  .nys-global-footer .footer-container.nys-global-footer-cols-2 .footer-col {
+    width: 47%;
+  }
+
+  .nys-global-footer .footer-container.nys-global-footer-cols-3 .footer-col {
+    width: 30%;
+  }
+
+  .nys-global-footer .footer-container.nys-global-footer-cols-4 .footer-col {
+    width: 22%;
+  }
+
+  .nys-global-footer .footer-container.nys-global-footer-cols-5 .footer-col {
+    width: 17%;
+  }
+
+  .nys-global-footer .footer-container.nys-global-footer-cols-6 .footer-col {
+    width: 13%;
+  }
+
+  .nys-global-footer .footer-container.nys-global-footer-cols-7 .footer-col {
+    width: 11%;
   }
 }
