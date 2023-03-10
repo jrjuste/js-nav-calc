@@ -3,15 +3,60 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "./page.module.css";
 import Script from "next/script";
+import React, { useState } from "react";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
+
+
 export default function Home() {
+  const [data, setData] = useState(["hello", "hi there", "holla"]);
+
+  const [showAll, setShowAll] = useState(false);
+  const [currentIdx, setCurrentIdx] = useState(0);
+  const [showCurrent, setShowCurrent] = useState(false);
+
+   const toggleAll = () => {
+    setShowAll(val => !val);
+    setShowCurrent(false);
+  };
+
+  const toggleCurrent = () => {
+    if (!showCurrent) {
+      setShowCurrent(true);
+      setShowAll(false);
+      return;
+    }
+  };
+
+  const setCurrent = (index: React.SetStateAction<number>) => {
+    setCurrentIdx(index);
+    toggleCurrent();
+  };
+
+
   return (
     <>
       <Script src="nav.js" />
       <Script src="calc.js" />
 
+      <div>
+      <div style={{ display: "flex" }}>
+        <button onClick={toggleAll}>{showAll ? "Hide All" : "Show All"}</button>
+        <button onClick={() => setCurrent(0)}>First</button>
+        <button onClick={() => setCurrent(1)}>Second</button>
+        <button onClick={() => setCurrent(2)}>Third</button>
+      </div>
+      <div>
+        {showAll && data.map((el, i) => <p key={`content-${i}`}>{el}</p>)}
+      </div>
+
+      {showCurrent ? <div>{data[currentIdx]}</div> : null}
+    </div>
+      
+
+    
       <div id="header" className="nys-global-header horizontal stacked">
         <div className="nav-toggle">
           <a href="#" role="button" id="nys-menu-control">
@@ -377,6 +422,23 @@ export default function Home() {
 			the amount of the health insurance premium for dependent or family health care coverage, if ordered by a
 			National Medical Support Notice.
 		</p>
+
+    <div>
+
+			<form id="iexcalc" action="#">
+
+      {/* <!-- optional to enter employee's name --> */}
+
+<p className="containerP" id="calcR">
+  <label className="contField" htmlFor="employee_name">Employee Name</label>
+  <input className="contField" type="text" id="employee_name" name="employee_name" value="Name (optional)" />
+</p>
+
+
+
+      </form>
+
+      </div>
 
 
 
